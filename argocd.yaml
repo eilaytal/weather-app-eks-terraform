@@ -1,0 +1,46 @@
+# configs:
+#   params:
+#     server.insecure: true
+
+# server:
+#   service:
+#     type: NodePort
+#   ingress:
+#     enabled: true
+#     controller: aws
+#     annotations: {
+#       kubernetes.io/ingress.class: "alb",
+#       alb.ingress.kubernetes.io/scheme: "internet-facing",
+#       alb.ingress.kubernetes.io/target-type: "instance",
+#       alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:il-central-1:654654166113:certificate/a87578f3-7806-45c0-9f45-475753d137e1"
+#     }
+#     path: /*
+#     pathType: ImplementationSpecific
+#   ingressGrpc:
+#     pathType: ImplementationSpecific
+
+
+
+global:
+image:
+  tag: "v2.6.6"
+
+configs:
+params:
+  server.insecure: true
+
+server:
+extraArgs:
+- --insecure
+service:
+  type: NodePort
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: instance
+    # alb.ingress.kubernetes.io/backend-protocol-version: HTTP2 #This tells AWS to send traffic from the ALB using HTTP2. Can use GRPC as well if you want to leverage GRPC specific features
+
+  path: /
+  # pathType: ImplementationSpecific
