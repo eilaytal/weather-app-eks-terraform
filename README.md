@@ -1,6 +1,3 @@
-Sure, here's a basic template for a README file for your Terraform project:
-
----
 
 # Terraform Project
 
