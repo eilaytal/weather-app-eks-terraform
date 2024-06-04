@@ -6,11 +6,9 @@
 This repository contains Terraform configurations for managing infrastructure on AWS.
 
 ## Related Repositories
-
+- [Weather App](https://github.com/eilaytal/weather-app): The main repository containing the Weather App source code.
 - [Jenkins Pipeline](https://github.com/eilaytal/jenkins_pipeline): Jenkins pipeline for automating CI/CD processes for the Weather App.
 - [GitOps Manifests](https://github.com/eilaytal/gitops-manifests): GitOps manifests for managing the deployment of the Weather App.
-- [Terraform Project](https://github.com/eilaytal/terraform-project): Terraform configurations for managing infrastructure on AWS.
-
 ## Table of Contents
 
 1. [Modules](#modules)
